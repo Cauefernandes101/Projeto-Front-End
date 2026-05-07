@@ -7,9 +7,14 @@
 }
 
 body {
-  background: #f5f5f5;
+  background: #FFFFFF;
 }
-
+.search {
+  width: 300px;  /* Largura fixa */
+  height: 40px;  /* Altura fixa */
+  padding: 10px; /* Espaçamento interno */
+  font-size: 16px;
+}
 /* HEADER */
 .header {
   display: flex;
@@ -21,8 +26,10 @@ body {
 }
 
 .header h1 {
-  font-size: 20px;
-  font-family: Oswald, sans-serif;
+  font-size: 45px;
+  font-family: "oswald", sans-serif;
+  font-weight: 400;
+  font-style: normal;;
 }
 
 .header-right {
@@ -37,11 +44,13 @@ body {
 
 .perfil {
   cursor: pointer;
+  font-size: 15pt ;
 }
 
 /* CONTAINER */
 .container {
   padding: 20px;
+  background-color: #D9D9D9;
 }
 
 /* SEÇÕES */
@@ -111,3 +120,4 @@ section h2 {
     grid-template-columns: repeat(5, 1fr);
   }
 }
+
