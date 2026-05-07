@@ -56,9 +56,8 @@ body {
 
 /* CONTAINER */
 .container {
-  padding: 20px;
-  
-  margin: 10px;
+  padding: 15px;
+  margin: 15px;
   border-radius: 10px;
 }
 
@@ -67,8 +66,8 @@ section {
   margin-bottom: 30px;
   padding-top: 20px;
   background-color: #D9D9D9;
-  padding: 20px;
   border-radius:10px;
+  padding: 14px;
 }
 
 section h2 {
@@ -80,8 +79,8 @@ section h2 {
   display: grid;
   gap: 35px;
   justify-content: center;
+  padding: 10px;
 }
-
 /* Desktop */
 .grid.livros {
   grid-template-columns: repeat(5, 1fr);
