@@ -110,10 +110,46 @@ footer {
   border-top: 1px solid #ddd;
 }
 
+
 .footer {
   font-family: Oswald, sans-serif;
   font-size: 17pt;
 }
+
+/* Classes perfil */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.usuario-img {
+  width: 150px;
+  height: 150px;
+  background: #bbb;
+}
+
+.sidebar button {
+  padding: 12px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.grafico {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+
+  background: conic-gradient(
+    hotpink 0% 40%,
+    red 40% 60%,
+    blue 60% 80%,
+    turquoise 80% 100%
+  );
+}
+
 
 /* 📱 MOBILE */
 @media (max-width: 799px) {
