@@ -45,7 +45,12 @@ body {
 
 .perfil {
   cursor: pointer;
-  font-size: 15pt ;
+  font-size: 15pt;
+  transition-duration: 0.4s;
+}
+.perfil:hover {
+  color: #a1a1a1;
+  font-size: 23px;
 }
 
 /* CONTAINER */
@@ -66,7 +71,8 @@ section h2 {
 /* GRID DE LIVROS */
 .grid {
   display: grid;
-  gap: 15px;
+  gap: 35px;
+  justify-content: center;
 }
 
 /* Desktop */
@@ -83,17 +89,24 @@ section h2 {
 }
 
 .livro img {
-  width: 100%;
-  height: auto;
+  width: 200px;
+  height: 300px;
   border-radius: 4px;
 }
 
 /* FOOTER */
-.footer {
+footer {
   text-align: center;
   padding: 15px;
   background: #fff;
+  bottom: 0;
+  width: 100%;
   border-top: 1px solid #ddd;
+}
+
+.footer {
+  font-family: Oswald, sans-serif;
+  font-size: 17pt;
 }
 
 /* 📱 MOBILE */
