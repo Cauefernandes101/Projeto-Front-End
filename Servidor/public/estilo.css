@@ -1,0 +1,112 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.header h1 {
+  font-size: 20px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header input {
+  padding: 5px;
+}
+
+.perfil {
+  cursor: pointer;
+}
+
+/* CONTAINER */
+.container {
+  padding: 20px;
+}
+
+/* SEÇÕES */
+section {
+  margin-bottom: 30px;
+}
+
+section h2 {
+  margin-bottom: 10px;
+}
+
+/* GRID DE LIVROS */
+.grid {
+  display: grid;
+  gap: 15px;
+}
+
+/* Desktop */
+.grid.livros {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* LIVRO */
+.livro {
+  background: #fff;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.livro img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 15px;
+  background: #fff;
+  border-top: 1px solid #ddd;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 799px) {
+  .grid.livros {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* 📱 TABLET */
+@media (min-width: 800px) and (max-width: 1279px) {
+  .grid.livros {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 💻 DESKTOP */
+@media (min-width: 1280px) {
+  .grid.livros {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
