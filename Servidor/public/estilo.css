@@ -3,7 +3,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  
+  font-family: "oswald", sans-serif;
 }
 
 body {
@@ -31,6 +32,7 @@ body {
   font-weight: 400;
   font-style: normal;;
 }
+
 
 .header-right {
   display: flex;
@@ -63,6 +65,10 @@ body {
 /* SEÇÕES */
 section {
   margin-bottom: 30px;
+  padding-top: 20px;
+  background-color: #D9D9D9;
+  padding: 20px;
+  border-radius:10px;
 }
 
 section h2 {
@@ -79,11 +85,12 @@ section h2 {
 /* Desktop */
 .grid.livros {
   grid-template-columns: repeat(5, 1fr);
+  
 }
 
 /* LIVRO */
 .livro {
-  background: #fff;
+  background-color: #FFFFFF;
   padding: 10px;
   text-align: center;
   border-radius: 5px;
