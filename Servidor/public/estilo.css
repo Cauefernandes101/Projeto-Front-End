@@ -57,7 +57,7 @@ body {
 /* CONTAINER */
 .container {
   padding: 20px;
-  background-color: #D9D9D9;
+  
   margin: 10px;
   border-radius: 10px;
 }
@@ -137,6 +137,7 @@ footer {
   background: #ddd;
   cursor: pointer;
   font-size: 16px;
+  max-width: max-content;
 }
 
 .grafico {
