@@ -45,6 +45,7 @@ body {
 }
 
 .perfil {
+  color: black;
   cursor: pointer;
   font-size: 15pt;
   transition-duration: 0.4s;
@@ -52,6 +53,10 @@ body {
 .perfil:hover {
   color: #a1a1a1;
   font-size: 23px;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* CONTAINER */
