@@ -37,6 +37,15 @@
 <footer>
   <p class="footer">Desenvolvedores: Cauê e Alexandre</p>
 </footer>
+<script>
 
+function login() {
+  const nome = document.getElementById("nome").value;
+    sessionStorage.setItem("userLogado", nome);
+    sessionStorage.setItem("isLoggedIn", "true");
+  
+}
+
+</script>
 </body>
 </html>

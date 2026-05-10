@@ -59,26 +59,29 @@ app.post("/cadastrar_usuario", (req, res) => {
 });
 
 // Login de usuário 
-app.post("/logar_usuario", (req, res) => {
-  const { nome, senha } = req.body;
+app.post("/logar_usuario", async (req, res) => {
+  try {
+    const { nome, senha } = req.body;
 
-  if (!nome || !senha) {
-    return res.status(400).send("Nome e senha são obrigatórios!");
-  }
-
-  usuarios.findOne({ nome, senha }, (err, user) => {
-    if (err) {
-      return res.status(500).send("Erro ao logar usuário!");
+    if (!nome || !senha) {
+      return res.status(400).send("Nome e senha são obrigatórios!");
     }
 
-    if (!user) {
-      return res.status(401).send("Usuário ou senha inválidos!");
-    }
-    sessionStorage.setItem("userLogado", nome);
-    sessionStorage.setItem("isLoggedIn", "true");
+    const user = await usuarios.findOne({
+        nome,
+        senha
+      });
+
+      if (!user) {
+        return res.status(401).send("Usuário inválido");
+      }
+      
     
-    return res.redirect('/Perfil.html');
-  });
+    return res.redirect('/Perfil.html');}
+  catch (erro) {
+    console.error(erro);
+    return res.status(500).send("Erro no servidor");
+     }
 });
 
 
