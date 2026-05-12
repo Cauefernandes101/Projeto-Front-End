@@ -10,12 +10,47 @@
 body {
   background: #FFFFFF;
 }
+/*Aba search*/
 .search {
   display: flex;
   width: 300px;  /* Largura fixa */
   height: 40px;  /* Altura fixa */
   padding: 10px; /* Espaçamento interno */
   font-size: 16px;
+}
+.search-container {
+    position: relative; /* Base para a lista flutuar */
+    width: 300px;
+}
+
+#inputLivro {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.sugestoes {
+    position: absolute;
+    top: 100%; /* Cola logo abaixo do input */
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-top: none;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none; /* Escondida por padrão */
+    z-index: 1000;
+}
+
+.sugestao-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.sugestao-item:hover {
+    background-color: #f0f0f0;
 }
 /* HEADER */
 .header {

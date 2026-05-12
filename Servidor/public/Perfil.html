@@ -15,7 +15,10 @@
     <h1>Estante Pública</h1>
   </div>
   <div class="header-right">
-    <input type="text" placeholder="Search..."class="search">
+    <div class="search-container">
+      <input type="text" class="search" id="inputLivro" placeholder="Digite o nome do livro..." autocomplete="off">
+      <div id="listaSugestoes" class="sugestoes"></div>
+    </div>
     <img src="https://i.pinimg.com/564x/c7/ab/cd/c7abcd3ce378191a3dddfa4cdb2be46f.jpg" alt="Smiley face" style="float:left; width:42px; height:42px; ">
     <span class="perfil">Perfil</span>
     
@@ -28,7 +31,11 @@
     <aside class="sidebar">
 
       <div class="usuario-img"></div>
+      
+      <img id="minhaFoto" src="https://placeholder.com" style="width:150px; height:150px; border-radius:50%; object-fit:cover; display:block; margin-bottom:10px;">
 
+  
+      <input type="file" id="upload" accept="image/*">
       <button>Lista de Livros</button>
       <button>Lista de Críticas</button>
 
@@ -79,6 +86,24 @@
 <footer>
   <p class="footer">Desenvolvedores: Cauê e Alexandre</p>
 </footer>
+<script src="/busca.js" defer>
+   
 
+    
+const input = document.getElementById('upload');
+const foto = document.getElementById('minhaFoto');
+
+input.addEventListener('change', function(e) {
+  const arquivo = e.target.files[0];
+
+  if (arquivo) {
+        // Criar o link temporário da imagem
+    const urlDaImagem = URL.createObjectURL(arquivo);
+        // Atribuir ao SRC da imagem
+      foto.src = urlDaImagem;
+  }
+});
+    
+</script>
 </body>
 </html>
