@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="https://use.typekit.net/fcd8hzk.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estante Pública</title>
+  <title>Perfil</title>
   <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
 <header class="header">
   <div class="logo" >
     <img src="imagens\Captura de tela 2026-05-07 174437.png" width="80" height="80">
-    <h1>Estante Pública</h1>
+    <a href="PaginaInicial.html" class="link-inicial"><h1>Estante Pública</h1></a>
   </div>
   <div class="header-right">
     <div class="search-container">
@@ -32,11 +32,7 @@
 
       <div class="usuario-img"></div>
       
-      <img id="minhaFoto" src="https://placeholder.com" style="width:150px; height:150px; border-radius:50%; object-fit:cover; display:block; margin-bottom:10px;">
-
-  
-      <input type="file" id="upload" accept="image/*">
-      <button>Lista de Livros</button>
+      <button><a href="lista_de_livros.html" class="link-livro">Lista de Livros</a></button>
       <button>Lista de Críticas</button>
 
       <div class="grafico"></div>
@@ -56,7 +52,7 @@
             <div class="scroll livros">
               <div class="livro"><img src="https://m.media-amazon.com/images/I/91wKDODkgWL._AC_UF1000,1000_QL80_.jpg"><p>Harry Potter</p></div>
               <div class="livro"><img src="https://m.media-amazon.com/images/I/51t39SMRzjL._AC_UF1000,1000_QL80_.jpg"><p>The Godfather</p></div>
-              <div class="livro"><img src="https://m.media-amazon.com/images/I/61I24wOsn8L._AC_UF1000,1000_QL80_.jpg"><p>Hunger Games</p></div>
+              <div class="livro"><a href="hungergames.html" class="link-livro"><img src="https://m.media-amazon.com/images/I/61I24wOsn8L._AC_UF1000,1000_QL80_.jpg"><p>Hunger Games</p></a></div>
               
             </div>
           </section>
@@ -89,20 +85,6 @@
 <script src="/busca.js" defer>
    
 
-    
-const input = document.getElementById('upload');
-const foto = document.getElementById('minhaFoto');
-
-input.addEventListener('change', function(e) {
-  const arquivo = e.target.files[0];
-
-  if (arquivo) {
-        // Criar o link temporário da imagem
-    const urlDaImagem = URL.createObjectURL(arquivo);
-        // Atribuir ao SRC da imagem
-      foto.src = urlDaImagem;
-  }
-});
     
 </script>
 </body>

@@ -112,6 +112,7 @@ a {
     display: flex;
     gap: 50px;
     padding-left: 15px;
+    padding-top: 20px;
 }
 
 /* SEÇÕES */
@@ -155,6 +156,11 @@ section h2 {
   width: 200px;
   height: 300px;
   border-radius: 4px;
+  transition: 0.2s;
+}
+
+.livro img:hover {
+  transform: scale(1.05);
 }
 
 .livro-critica {
@@ -184,6 +190,10 @@ footer {
 .footer {
   font-family: Oswald, sans-serif;
   font-size: 17pt;
+}
+
+.link-inicial {
+  color: black;
 }
 
 /* Classes perfil */
