@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
   font-family: "oswald", sans-serif;
 }
 
@@ -221,11 +220,17 @@ footer {
 
 .sidebar button {
   padding: 12px;
-  border: none;
+  border: inset 4px rgb(182, 182, 182);
   background: #ddd;
   cursor: pointer;
   font-size: 16px;
   max-width: max-content;
+  transition-duration: 0.2s;
+}
+
+.sidebar button:hover {
+  background: #cfcfcf;
+  transform: scale(1.1);
 }
 
 .grafico {
