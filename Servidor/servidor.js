@@ -242,7 +242,7 @@ app.post("/adicionar_livro",verificarLogin, async (req, res) => {
 
   try {
 
-    const { titulo, status, nota, capa,generos } = req.body;
+    const { titulo, status, nota, capa,generos,Autor } = req.body;
     const listaGeneros = generos
       .split(",")
       .map(generos => generos.trim());
@@ -252,6 +252,8 @@ app.post("/adicionar_livro",verificarLogin, async (req, res) => {
 
       titulo:titulo,
       
+      Autor:Autor,
+
       capa:capa,
 
       nota: nota,
