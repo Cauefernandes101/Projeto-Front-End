@@ -21,8 +21,12 @@ app.use(session({
 
   secret: "segredo_super_seguro",
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+  cookie: {
 
+    maxAge: 1000 * 60 * 60 //1hr
+
+  }
 }));
 //ejs configuração
 app.set('view engine', 'ejs');
@@ -319,6 +323,46 @@ app.post("/alterar_nota", async (req, res) => {
     console.log(erro);
 
     res.status(500).send("Erro ao alterar nota");
+
+  }
+
+});
+// metodo para recolher os generos do banco de dados
+app.get("/dados_generos", async (req, res) => {
+
+  try {
+
+    const listaLivros = await livros.find({
+
+      usuario: req.session.nome
+
+    }).toArray();
+
+    const contagem = {};
+
+    listaLivros.forEach(livro => {
+
+      livro.generos.forEach(genero => {
+
+        if (!contagem[genero]) {
+
+          contagem[genero] = 0;
+
+        }
+
+        contagem[genero]++;
+
+      });
+
+    });
+
+    res.json(contagem);
+
+  } catch (erro) {
+
+    console.log(erro);
+
+    res.status(500).send("Erro");
 
   }
 

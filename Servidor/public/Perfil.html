@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Perfil</title>
   <link rel="stylesheet" href="estilo.css">
+ 
 </head>
 <body>
 
@@ -35,7 +36,13 @@
       <button><a href="lista_de_livros" class="link-livro">Lista de Livros</a></button>
       <button>Lista de Críticas</button>
 
-      <div class="grafico"></div>
+      <div class="grafico">
+        
+
+      <canvas id="graficoGeneros"></canvas>
+
+
+      </div>
 
       <ul>
         <li style="color:red;" >Fantasia</li>
@@ -81,8 +88,33 @@
 <footer>
   <p class="footer">Desenvolvedores: Cauê e Alexandre</p>
 </footer>
-<script src="/busca.js" defer>
-   
+  
+  <canvas id="graficoGeneros"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/busca.js" defer>  
+
+const ctx = document.getElementById("graficoGeneros");
+console.log(document.getElementById("graficoGeneros"));
+new Chart(ctx, {
+
+  type: "pie",
+
+  data: {
+
+    labels: ["Aventura", "Drama", "Ficção"],
+
+    datasets: [{
+
+      data: [5, 3, 7],
+
+      backgroundColor: ["red", "blue", "green"]
+
+    }]
+
+  }
+
+});
+console.log(document.getElementById("graficoGeneros"));
 
     
 </script>
