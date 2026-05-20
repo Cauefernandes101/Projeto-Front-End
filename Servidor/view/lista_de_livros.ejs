@@ -26,66 +26,27 @@
 <main>
 <div class="biblioteca">
     <div class="abas">
-        <div class="aba">Lendo</div>
-        <div class="aba">Planejo Ler</div>
-        <div class="aba">Lidos</div>
+      
+      <div class="aba" onclick="filtrar('lendo', this)">
+        Lendo
+      </div>
+
+      <div class="aba" onclick="filtrar('planejo', this)">
+        Planejo Ler
+      </div>
+
+      <div class="aba" onclick="filtrar('lido', this)">
+        Lidos
+      </div>
+        
     </div>
     <input type="text" placeholder="Search..."class="search">
-        <div class="livro-lista">
+  
+<div class="livro-lista">
+<div class="livro-lista">
 
-      <div class="livro-esquerda">
-        <img src="https://m.media-amazon.com/images/I/81ibfYk4qmL.jpg" alt="Harry Potter">
 
-        <div class="titulo">
-          Harry Potter <br>e a Pedra Filosofal
-        </div>
-      </div>
-    
-
-    <div class="autor">
-    J.K.Rowling
-    </div>
-
-    <div class="avaliacao">
-    ☆ ☆ ☆ ☆ ☆
-    </div>
-
-    <div class="generos">
-    Fantasia<br>
-    Ação<br>
-    Aventura<br>
-    Drama<br>
-    Comédia
-    </div>
-  </div>
-   <div class="livro-lista">
-
-      <div class="livro-esquerda">
-        <a href="hungergames.html" class="link-livro"><img src="https://m.media-amazon.com/images/I/61I24wOsn8L._AC_UF1000,1000_QL80_.jpg" alt="Jogos Vorazes"></a>
-
-        <div class="titulo">
-          Jogos<br>
-          Vorazes
-        </div>
-      </div>
-
-      <div class="autor">
-        Suzanne Collins
-      </div>
-
-      <div class="avaliacao">
-        ☆ ☆ ☆ ☆
-      </div>
-
-      <div class="generos">
-        Fantasia<br>
-        Ficção Científica<br>
-        Suspense
-      </div>
-
-    </div>
-
-    <!-- Livro 3 -->
+    <!-- Livros -->
     <% livros.forEach(livro => { %>
 
     <div class="livro-lista" data-status="<%= livro.status %>">
@@ -117,7 +78,7 @@
           <span>
             <%= i < estrelas ? "★" : "☆" %>
           </span>
-
+0
         <% } %>
 
       </div>
@@ -140,38 +101,43 @@
   <% }) %>
 
 </div>
+</div>
 </main>
 <footer>
   <p class="footer">Desenvolvedores: Cauê e Alexandre</p>
 </footer>
 <script>
-  function filtrar(status) {
+
+function filtrar(status, elemento) {
 
   const livros = document.querySelectorAll(".livro-lista");
-  const tabs = document.querySelectorAll(".aba");
+  const abas = document.querySelectorAll(".aba");
 
-  // troca aba ativa
-  tabs.forEach(tab => tab.classList.remove("active"));
-  event.target.classList.add("active");
+  abas.forEach(aba => {
+    aba.classList.remove("active");
+  });
+
+  elemento.classList.add("active");
 
   livros.forEach(livro => {
 
-    const livroStatus = livro.dataset.status;
+    const livroStatus = livro.dataset.status
+      .trim()
+      .toLowerCase();
 
-    if (status === "todos" || livroStatus === status) {
-      livro.style.display = "block";
+    if (livroStatus === status) {
+
+      livro.style.display = "flex";
+
     } else {
+
       livro.style.display = "none";
+
     }
 
   });
 
 }
-
-// inicializa mostrando todos
-window.onload = () => {
-  filtrar("todos");
-};
 
 </script>
 </body>
