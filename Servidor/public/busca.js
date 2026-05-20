@@ -1,6 +1,16 @@
  // Aba de search
 const livros = [
-    { nome: "Hunger Games", url: "hungergames.html" }
+    { nome: "Harry Potter", url: "harrypotter.html" },
+    { nome: "Hunger Games", url: "hungergames.html" },
+    { nome: "House of Leaves", url: "houseofleaves.html" },
+    { nome: "A Metamorfose", url: "metamorfose.html" },
+    { nome: "Solo Leveling", url: "sololeveling.html"},
+    { nome: "Moby Dick", url: "mobydick.html"},
+    { nome: "To Kill a Mockingbird", url: "osoleoparatodos.html"},
+    { nome: "The Great Gatsby", url: "thegreatgatsby.html"},
+    { nome: "The Shining", url: "theshining.html"},
+    { nome: "11/22/63", url: "112263.html"},
+
 ];
 
 const input = document.getElementById("inputLivro");
