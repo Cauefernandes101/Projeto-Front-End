@@ -54,7 +54,31 @@
         único sobrevivente, mas ele acorda para descobrir que recebeu um 
         estranho poder que lhe permite se tornar mais forte a cada missão que completa...
       </div>
+      <form action="/adicionar_livro" method="POST">
+        <input type="hidden" name="Autor" value="Suzanne Collins">
+        <input type="hidden" name="generos" value="Aventura, Ficção Científica">
+        <input type="hidden" name="titulo" value="The Hunger Games">
+        <input type="hidden" name="capa" value="https://m.media-amazon.com/images/I/61I24wOsn8L._AC_UF1000,1000_QL80_.jpg">
+        <select name="status">
 
+        <option value="Planejo Ler">
+          Planejo Ler
+        </option>
+
+        <option value="Lendo">
+          Lendo
+        </option>
+
+        <option value="Lido">
+          Lido
+        </option>
+
+        </select>
+        <button type="submit">
+          Adicionar à Estante 
+        </button>
+
+      </form>
     </section>
 
     <section class="criticas-area">
@@ -78,10 +102,39 @@
           <input type="submit" value="Enviar">
           </form>
         </div>
+        <label>
 
-        <div class="avaliacao">
-          Avaliação: ☆ ☆ ☆
-        </div>
+          Nota:
+
+        </label>
+
+        <select name="nota">
+
+          <option value="0">
+            Sem nota
+          </option>
+
+          <option value="1">
+            ⭐ 1
+          </option>
+
+          <option value="2">
+            ⭐⭐ 2
+          </option>
+
+          <option value="3">
+            ⭐⭐⭐ 3
+          </option>
+
+          <option value="4">
+            ⭐⭐⭐⭐ 4
+          </option>
+
+          <option value="5">
+            ⭐⭐⭐⭐⭐ 5
+          </option>
+
+        </select>
 
       </div>
      
