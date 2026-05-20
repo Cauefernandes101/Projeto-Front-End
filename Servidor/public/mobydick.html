@@ -46,7 +46,8 @@
       </div>
 
       <div class="sinopse">
-        Sinopse: A história do capitão Ahab, em busca de vingança contra o terrível cachalote que amputara sua perna...
+        Sinopse: A história do capitão Ahab, em busca de 
+        vingança contra o terrível cachalote que amputara sua perna.
       </div>
 
     </section>
@@ -54,7 +55,7 @@
     <section class="criticas-area">
 
       <h2>Críticas</h2>
-
+      
       <div class="card-critica">
 
         <div class="usuario">
@@ -65,14 +66,21 @@
             <h3>Título da Crítica</h3>
             <p>Resenha e Crítica</p>
           </div>
-
+          <h4>Escreva:</h4>
+          <form method="post" action="/Escrever_Critica">
+          <textarea name="resposta" rows="4" cols="80" placeholder="Digite sua Critica..."></textarea><br>
+          <input type="hidden" name="arquivo" value="hungergames.html">
+          <input type="submit" value="Enviar">
+          </form>
         </div>
 
         <div class="avaliacao">
-          Avaliação: ☆ ☆ ☆ ☆ ☆
+          Avaliação: ☆ ☆ ☆ ☆
         </div>
 
       </div>
+     
+        <!-- CRITICAS-AQUI -->
 
     </section>
 

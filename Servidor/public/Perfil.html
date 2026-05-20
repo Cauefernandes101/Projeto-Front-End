@@ -15,7 +15,10 @@
     <a href="PaginaInicial.html" class="link-inicial"><h1>Estante Pública</h1></a>
   </div>
   <div class="header-right">
-    <input type="text" placeholder="Search..."class="search">
+    <div class="search-container">
+      <input type="text" class="search" id="inputLivro" placeholder="Digite o nome do livro..." autocomplete="off">
+      <div id="listaSugestoes" class="sugestoes"></div>
+    </div>
     <img src="https://i.pinimg.com/564x/c7/ab/cd/c7abcd3ce378191a3dddfa4cdb2be46f.jpg" alt="Smiley face" style="float:left; width:42px; height:42px; ">
     <span class="perfil">Perfil</span>
     
@@ -27,9 +30,9 @@
     <!-- SIDEBAR -->
     <aside class="sidebar">
 
-      <div class="usuario-img"></div>
-
-      <button><a href="lista_de_livros.html" class="link-livro">Lista de Livros</a></button>
+      <div class="usuario-img"><img src="https://i.pinimg.com/564x/c7/ab/cd/c7abcd3ce378191a3dddfa4cdb2be46f.jpg" alt="Smiley face" style="width: 150px; height: 150px;"></div>
+      
+      <button><a href="lista_de_livros.ejs" class="link-livro">Lista de Livros</a></button>
       <button>Lista de Críticas</button>
 
       <div class="grafico"></div>
@@ -47,8 +50,8 @@
           <section>
             
             <div class="scroll livros">
-              <div class="livro"><img src="https://m.media-amazon.com/images/I/91wKDODkgWL._AC_UF1000,1000_QL80_.jpg"><p>Harry Potter</p></div>
-              <div class="livro"><img src="https://m.media-amazon.com/images/I/51t39SMRzjL._AC_UF1000,1000_QL80_.jpg"><p>The Godfather</p></div>
+              <div class="livro"><a href="harrypotter_pedrafilosofal.html" class="link-livro"><img src="https://m.media-amazon.com/images/I/91wKDODkgWL._AC_UF1000,1000_QL80_.jpg"><p>Harry Potter</p></div></a>
+              <div class="livro"><a href="TheGodfather.html" class="link-livro"><img src="https://m.media-amazon.com/images/I/51t39SMRzjL._AC_UF1000,1000_QL80_.jpg"><p>The Godfather</p></div></a>
               <div class="livro"><a href="hungergames.html" class="link-livro"><img src="https://m.media-amazon.com/images/I/61I24wOsn8L._AC_UF1000,1000_QL80_.jpg"><p>Hunger Games</p></a></div>
               
             </div>
@@ -59,10 +62,9 @@
           <section>
             
             <div class="scroll livros">
-              <div class="livro"><img src="https://m.media-amazon.com/images/I/91wKDODkgWL._AC_UF1000,1000_QL80_.jpg"><p>Harry Potter</p></div>
-              <div class="livro"><img src="https://m.media-amazon.com/images/I/51t39SMRzjL._AC_UF1000,1000_QL80_.jpg"><p>The Godfather</p></div>
-              <div class="livro"><img src="https://m.media-amazon.com/images/I/61I24wOsn8L._AC_UF1000,1000_QL80_.jpg"><p>Hunger Games</p></div>
-              
+              <div class="livro"><a href="harrypotter_pedrafilosofal.html" class="link-livro"><img src="https://m.media-amazon.com/images/I/91wKDODkgWL._AC_UF1000,1000_QL80_.jpg"><p>Harry Potter</p></div></a>
+              <div class="livro"><a href="TheGodfather.html" class="link-livro"><img src="https://m.media-amazon.com/images/I/51t39SMRzjL._AC_UF1000,1000_QL80_.jpg"><p>The Godfather</p></div></a>
+              <div class="livro"><a href="hungergames.html" class="link-livro"><img src="https://m.media-amazon.com/images/I/61I24wOsn8L._AC_UF1000,1000_QL80_.jpg"><p>Hunger Games</p></a></div>
             </div>
           </section>
 
@@ -79,6 +81,10 @@
 <footer>
   <p class="footer">Desenvolvedores: Cauê e Alexandre</p>
 </footer>
+<script src="/busca.js" defer>
+   
 
+    
+</script>
 </body>
 </html>

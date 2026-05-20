@@ -3,19 +3,53 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
   font-family: "oswald", sans-serif;
 }
 
 body {
   background: #FFFFFF;
 }
+/*Aba search*/
 .search {
   display: flex;
   width: 300px;  /* Largura fixa */
   height: 40px;  /* Altura fixa */
   padding: 10px; /* Espaçamento interno */
   font-size: 16px;
+}
+.search-container {
+    position: relative; /* Base para a lista flutuar */
+    width: 300px;
+}
+
+#inputLivro {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.sugestoes {
+    position: absolute;
+    top: 100%; /* Cola logo abaixo do input */
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-top: none;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none; /* Escondida por padrão */
+    z-index: 1000;
+}
+
+.sugestao-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.sugestao-item:hover {
+    background-color: #f0f0f0;
 }
 /* HEADER */
 .header {
@@ -186,11 +220,17 @@ footer {
 
 .sidebar button {
   padding: 12px;
-  border: none;
+  border: inset 4px rgb(182, 182, 182);
   background: #ddd;
   cursor: pointer;
   font-size: 16px;
   max-width: max-content;
+  transition-duration: 0.2s;
+}
+
+.sidebar button:hover {
+  background: #cfcfcf;
+  transform: scale(1.1);
 }
 
 .grafico {
@@ -215,7 +255,7 @@ footer {
   padding-top: 20px;
   padding-left: 40px;
   padding-right: 20px;
-  margin: 100px;
+  margin: 200px;
 }
 
 /* 📱 MOBILE */
@@ -269,7 +309,7 @@ footer {
   padding: 10px;
   width: 220px;
   height: 100px;
-  overflow: hidden;
+  overflow: auto;
   background: white;
 }
 

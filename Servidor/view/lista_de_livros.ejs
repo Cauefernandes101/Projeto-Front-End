@@ -15,7 +15,10 @@
     <h1>Estante Pública</h1>
   </div>
   <div class="header-right">
-    <input type="text" placeholder="Search..."class="search">
+    <div class="search-container">
+      <input type="text" class="search" id="inputLivro" placeholder="Digite o nome do livro..." autocomplete="off">
+      <div id="listaSugestoes" class="sugestoes"></div>
+    </div>
     <img src="https://i.pinimg.com/564x/c7/ab/cd/c7abcd3ce378191a3dddfa4cdb2be46f.jpg" alt="Smiley face" style="float:left; width:42px; height:42px; ">
     <a href="Perfil.html"><span class="perfil">Perfil</span></a>
   </div>
@@ -83,38 +86,93 @@
     </div>
 
     <!-- Livro 3 -->
-    <div class="livro-lista">
+    <% livros.forEach(livro => { %>
 
+    <div class="livro-lista" data-status="<%= livro.status %>">
+
+      <!-- LADO ESQUERDO -->
       <div class="livro-esquerda">
-        <img src="https://m.media-amazon.com/images/I/81O7u0dGaWL._AC_UF1000,1000_QL80_.jpg" alt="O Sol é para Todos">
+
+        <img src="<%= livro.capa %>" alt="capa do livro">
 
         <div class="titulo">
-          O Sol é<br>
-          para<br>
-          Todos
+          <%= livro.titulo %>
         </div>
+
       </div>
 
+      <!-- AUTOR (se quiser adicionar depois no banco) -->
       <div class="autor">
-        Harper Lee
+        <%= livro.autor || "Autor desconhecido" %>
       </div>
 
+      <!-- AVALIAÇÃO -->
       <div class="avaliacao">
-        ☆ ☆ ☆
+
+        <% 
+          const estrelas = Math.round(livro.nota || 0);
+          for(let i = 0; i < 5; i++) {
+        %>
+
+          <span>
+            <%= i < estrelas ? "★" : "☆" %>
+          </span>
+
+        <% } %>
+
       </div>
 
+      <!-- GÊNEROS -->
       <div class="generos">
-        Ação<br>
-        Mistério<br>
-        Aventura
+
+        <% livro.generos.forEach(genero => { %>
+
+          <div>
+            <%= genero %>
+          </div>
+
+        <% }) %>
+
       </div>
 
     </div>
+
+  <% }) %>
 
 </div>
 </main>
 <footer>
   <p class="footer">Desenvolvedores: Cauê e Alexandre</p>
 </footer>
+<script>
+  function filtrar(status) {
+
+  const livros = document.querySelectorAll(".livro-lista");
+  const tabs = document.querySelectorAll(".aba");
+
+  // troca aba ativa
+  tabs.forEach(tab => tab.classList.remove("active"));
+  event.target.classList.add("active");
+
+  livros.forEach(livro => {
+
+    const livroStatus = livro.dataset.status;
+
+    if (status === "todos" || livroStatus === status) {
+      livro.style.display = "block";
+    } else {
+      livro.style.display = "none";
+    }
+
+  });
+
+}
+
+// inicializa mostrando todos
+window.onload = () => {
+  filtrar("todos");
+};
+
+</script>
 </body>
 </html>

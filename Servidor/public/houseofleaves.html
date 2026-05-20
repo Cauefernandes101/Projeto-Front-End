@@ -47,7 +47,10 @@
 
       <div class="sinopse">
         Sinopse: Johnny Truant, um jovem a procura de um apartamento, que 
-        recebe uma dica de seu amigo Lude de um apartamento perto de um velho meio caduco...
+        recebe uma dica de seu amigo Lude de um apartamento perto de um velho 
+        meio caduco que está à venda. Ele se muda para lá e encontra um manuscrito 
+        que conta a história de um documentário sobre uma família que se muda para 
+        uma casa que é maior por dentro do que por fora...
       </div>
 
     </section>
@@ -55,7 +58,7 @@
     <section class="criticas-area">
 
       <h2>Críticas</h2>
-
+      
       <div class="card-critica">
 
         <div class="usuario">
@@ -66,14 +69,21 @@
             <h3>Título da Crítica</h3>
             <p>Resenha e Crítica</p>
           </div>
-
+          <h4>Escreva:</h4>
+          <form method="post" action="/Escrever_Critica">
+          <textarea name="resposta" rows="4" cols="80" placeholder="Digite sua Critica..."></textarea><br>
+          <input type="hidden" name="arquivo" value="hungergames.html">
+          <input type="submit" value="Enviar">
+          </form>
         </div>
 
         <div class="avaliacao">
-          Avaliação: ☆ ☆ ☆ ☆
+          Avaliação: ☆ ☆ ☆ ☆ ☆
         </div>
 
       </div>
+     
+        <!-- CRITICAS-AQUI -->
 
     </section>
 

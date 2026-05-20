@@ -15,7 +15,10 @@
     <h1>Estante Pública</h1>
   </div>
   <div class="header-right">
-    <input type="text" placeholder="Search..."class="search">
+    <div class="search-container">
+      <input type="text" class="search" id="inputLivro" placeholder="Digite o nome do livro..." autocomplete="off">
+      <div id="listaSugestoes" class="sugestoes"></div>
+    </div>
     <img src="https://i.pinimg.com/564x/c7/ab/cd/c7abcd3ce378191a3dddfa4cdb2be46f.jpg" alt="Smiley face" style="float:left; width:42px; height:42px; ">
     <span class="perfil">Perfil</span>
     
@@ -45,6 +48,7 @@ function login() {
     sessionStorage.setItem("isLoggedIn", "true");
   
 }
+
 
 </script>
 </body>

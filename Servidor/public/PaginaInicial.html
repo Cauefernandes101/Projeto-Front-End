@@ -15,7 +15,11 @@
     <a href="PaginaInicial.html" class="link-inicial"><h1>Estante Pública</h1></a>
   </div>
   <div class="header-right">
-    <input type="text" placeholder="Search..."class="search">
+    <div class="search-container">
+      <input type="text" class="search" id="inputLivro" placeholder="Digite o nome do livro..." autocomplete="off">
+      <div id="listaSugestoes" class="sugestoes"></div>
+    </div>
+    
     <img src="https://i.pinimg.com/564x/c7/ab/cd/c7abcd3ce378191a3dddfa4cdb2be46f.jpg" alt="Smiley face" style="float:left; width:42px; height:42px; ">
     <a href="Perfil.html"><span class="perfil">Perfil</span></a>
     
@@ -53,7 +57,7 @@
       <div class="livro"><a href="hungergames.html" class="link-livro"><img src="https://m.media-amazon.com/images/I/61I24wOsn8L._AC_UF1000,1000_QL80_.jpg"><p>Hunger Games</p></div></a>
       <div class="livro"><a href="theshining.html" class="link-livro"><img src="https://m.media-amazon.com/images/I/91U7HNa2NQL.jpg"><p>The Shining</p></div></a>
       <div class="livro"><a href="mobydick.html" class="link-livro"><img src="https://http2.mlstatic.com/D_NQ_NP_750888-MLA90660619164_082025-O.webp"><p>Moby Dick</p></div></a>
-      <div class="livro"><img src="https://m.media-amazon.com/images/I/715JOcuqSSL._AC_UF1000,1000_QL80_.jpg"><p>A Metamorfose</p></div>
+      <div class="livro"><a href="metamorfose.html" class="link-livro"><img src="https://m.media-amazon.com/images/I/715JOcuqSSL._AC_UF1000,1000_QL80_.jpg"><p>A Metamorfose</p></div></a>
     </div>
   </section>
 
@@ -62,6 +66,8 @@
 <footer>
   <p class="footer">Desenvolvedores: Cauê e Alexandre</p>
 </footer>
-
+<script src="busca.js" defer>
+  
+</script>
 </body>
 </html>
