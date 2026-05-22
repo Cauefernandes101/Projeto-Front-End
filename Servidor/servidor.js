@@ -285,7 +285,7 @@ app.post("/adicionar_livro",verificarLogin, async (req, res) => {
 
     await livros.insertOne(novoLivro);
 
-    res.redirect('/lista_de_livros.html');
+    res.redirect('/lista_de_livros');
 
   } catch (erro) {
 
@@ -331,7 +331,7 @@ app.post("/alterar_nota", async (req, res) => {
 
     );
 
-    res.redirect('/lista_de_livros.html');
+    res.redirect('/lista_de_livros');
 
   } catch (erro) {
 
