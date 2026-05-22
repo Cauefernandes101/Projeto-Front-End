@@ -253,6 +253,10 @@ function verificarLogin(req, res, next) {
   if (!req.session.nome) {
     // salva a URL que ele tentou acessar
     req.session.redirectTo = req.originalUrl;
+    //console.log(req.session.redirectTo)
+    if (req.session.redirectTo=="/adicionar_livro") {
+      req.session.redirectTo="/Perfil"
+    }
     return res.redirect("/Login");
   }
   next();

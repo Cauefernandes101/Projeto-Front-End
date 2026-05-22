@@ -398,8 +398,9 @@ input[type="submit"]:hover{
 }
 .estrelas{
   position:flex;
-  align-items:center
-  
+  align-items:center;
+  padding-top: 80px;
+
 }
 
 .link-livro {
