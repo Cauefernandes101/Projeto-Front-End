@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="https://use.typekit.net/fcd8hzk.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Great Gatsby</title>
+  <title>11/22/63</title>
   <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
@@ -54,6 +54,31 @@
         enviado de volta a 1958 para impedir o assassinato de Kennedy, mas logo 
         percebe que mudar o passado tem consequências imprevisíveis...
       </div>
+      <form action="/adicionar_livro" method="POST">
+        <input type="hidden" name="Autor" value="Stephen King">
+        <input type="hidden" name="generos" value="Ficção Científica, Mistério">
+        <input type="hidden" name="titulo" value="11/22/63">
+        <input type="hidden" name="capa" value="https://m.media-amazon.com/images/I/717e5mrJz+L._AC_UF1000,1000_QL80_.jpg">
+        <select name="status">
+
+        <option value="Planejo Ler">
+          Planejo Ler
+        </option>
+
+        <option value="Lendo">
+          Lendo
+        </option>
+
+        <option value="Lido">
+          Lido
+        </option>
+
+        </select>
+        <button type="submit">
+          Adicionar à Estante 
+        </button>
+
+      </form>
 
     </section>
 
@@ -73,13 +98,48 @@
           </div>
 
         </div>
-
-        <div class="avaliacao">
-          Avaliação: ☆ ☆ ☆
-        </div>
-
+        <h4>Escreva:</h4>
+        <form method="post" action="/Escrever_Critica">
+        <textarea name="resposta" rows="4" cols="80" placeholder="Digite sua Critica..."></textarea><br>
+        <input type="hidden" name="arquivo" value="112263.html">
+        <input type="submit" value="Enviar">
+        </form>
       </div>
+      <label>
 
+        Nota:
+
+      </label>
+
+      <select name="nota">
+
+        <option value="0">
+          Sem nota
+        </option>
+
+        <option value="1">
+          ⭐ 1
+        </option>
+
+        <option value="2">
+          ⭐⭐ 2
+        </option>
+
+        <option value="3">
+          ⭐⭐⭐ 3
+        </option>
+
+        <option value="4">
+          ⭐⭐⭐⭐ 4
+        </option>
+
+        <option value="5">
+          ⭐⭐⭐⭐⭐ 5
+        </option>
+
+      </select>
+
+    </div>
     </section>
 
   </main>
