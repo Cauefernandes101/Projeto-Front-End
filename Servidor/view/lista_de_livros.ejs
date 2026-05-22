@@ -20,7 +20,7 @@
       <div id="listaSugestoes" class="sugestoes"></div>
     </div>
     <img src="https://i.pinimg.com/564x/c7/ab/cd/c7abcd3ce378191a3dddfa4cdb2be46f.jpg" alt="Smiley face" style="float:left; width:42px; height:42px; ">
-    <a href="Perfil.html"><span class="perfil">Perfil</span></a>
+    <a href="/Perfil"><span class="perfil">Perfil</span></a>
   </div>
 </header>
 <main>
@@ -43,7 +43,7 @@
     <input type="text" placeholder="Search..."class="search">
   
 <div class="livro-lista">
-<div class="livro-lista">
+
 
     <!-- Livros -->
     <% livros.forEach(livro => { %>
@@ -57,10 +57,10 @@
             </div>
     
             <div class="autor">
-                <%= livro.autor || "Autor desconhecido" %>
+                <%= livro.Autor %>
             </div>
     
-            <div class="avaliacao">
+            <div class="estrelas">
     
                 <% 
                   const estrelas = Math.round(livro.nota || 0);
@@ -91,44 +91,32 @@
 
   <% }) %>
 
-</div>
+
 </div>
 </main>
 <footer>
   <p class="footer">Desenvolvedores: Cauê e Alexandre</p>
 </footer>
+<script src="/busca.js" defer></script>
 <script>
-
 function filtrar(status, elemento) {
-
-  const livros = document.querySelectorAll(".livro-lista");
+  const livros = document.querySelectorAll(".livro-esquerda");
   const abas = document.querySelectorAll(".aba");
 
-  abas.forEach(aba => {
-    aba.classList.remove("aba-ativa");
-  });
-
+  abas.forEach(aba => aba.classList.remove("aba-ativa"));
   elemento.classList.add("aba-ativa");
 
   livros.forEach(livro => {
-
-    const livroStatus = livro.dataset.status
-      .trim()
-      .toLowerCase();
+    const livroStatus = livro.dataset.status.trim().toLowerCase();
 
     if (livroStatus === status) {
-
       livro.style.display = "flex";
-
     } else {
-
       livro.style.display = "none";
-
     }
-
   });
-
 }
+
 
 </script>
 </body>

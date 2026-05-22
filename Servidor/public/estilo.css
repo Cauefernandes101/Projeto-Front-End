@@ -391,6 +391,15 @@ input[type="submit"]:hover{
   bottom: 15px;
   right: 20px;
   font-size: 22px;
+  width: 20%;
+  font-size: 18px;
+  gap: 5px;
+  padding-top: 80px;
+}
+.estrelas{
+  position:flex;
+  align-items:center
+  
 }
 
 .link-livro {
@@ -468,12 +477,6 @@ input[type="submit"]:hover{
   padding-top: 80px;
 }
 
-.avaliacao {
-  width: 20%;
-  font-size: 18px;
-  gap: 5px;
-  padding-top: 80px;
-}
 
 .generos {
   display: flex;
