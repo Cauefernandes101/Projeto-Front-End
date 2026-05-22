@@ -45,57 +45,48 @@
 <div class="livro-lista">
 <div class="livro-lista">
 
-
     <!-- Livros -->
     <% livros.forEach(livro => { %>
 
-    <div class="livro-lista" data-status="<%= livro.status %>">
-
-      <!-- LADO ESQUERDO -->
-      <div class="livro-esquerda">
+      <div class="livro-esquerda" data-status="<%= livro.status %>">
 
         <img src="<%= livro.capa %>" alt="capa do livro">
-
-        <div class="titulo">
-          <%= livro.titulo %>
-        </div>
-
-      </div>
-
-      <!-- AUTOR (se quiser adicionar depois no banco) -->
-      <div class="autor">
-        <%= livro.autor || "Autor desconhecido" %>
-      </div>
-
-      <!-- AVALIAÇÃO -->
-      <div class="avaliacao">
-
-        <% 
-          const estrelas = Math.round(livro.nota || 0);
-          for(let i = 0; i < 5; i++) {
-        %>
-
-          <span>
-            <%= i < estrelas ? "★" : "☆" %>
-          </span>
-0
-        <% } %>
-
-      </div>
-
-      <!-- GÊNEROS -->
-      <div class="generos">
-
-        <% livro.generos.forEach(genero => { %>
-
-          <div>
-            <%= genero %>
-          </div>
-
-        <% }) %>
-
-      </div>
-
+    
+            <div class="titulo">
+                <%= livro.titulo %>
+            </div>
+    
+            <div class="autor">
+                <%= livro.autor || "Autor desconhecido" %>
+            </div>
+    
+            <div class="avaliacao">
+    
+                <% 
+                  const estrelas = Math.round(livro.nota || 0);
+                  for(let i = 0; i < 5; i++) {
+                %>
+    
+                  <span>
+                    <%= i < estrelas ? "★" : "☆" %>
+                  </span>
+    
+                <% } %>
+    
+            </div>
+    
+            <div class="generos">
+    
+                <% livro.generos.forEach(genero => { %>
+    
+                    <div>
+                        <%= genero %>
+                    </div>
+    
+                <% }) %>
+    
+                  </div>
+    
     </div>
 
   <% }) %>
@@ -114,10 +105,10 @@ function filtrar(status, elemento) {
   const abas = document.querySelectorAll(".aba");
 
   abas.forEach(aba => {
-    aba.classList.remove("active");
+    aba.classList.remove("aba-ativa");
   });
 
-  elemento.classList.add("active");
+  elemento.classList.add("aba-ativa");
 
   livros.forEach(livro => {
 
