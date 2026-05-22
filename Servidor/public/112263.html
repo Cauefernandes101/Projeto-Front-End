@@ -14,7 +14,10 @@
     <a href="PaginaInicial.html" class="link-inicial"><h1>Estante Pública</h1></a>
   </div>
   <div class="header-right">
-    <input type="text" placeholder="Search..."class="search">
+    <div class="search-container">
+      <input type="text" class="search" id="inputLivro" placeholder="Digite o nome do livro..." autocomplete="off">
+      <div id="listaSugestoes" class="sugestoes"></div>
+    </div>
     <img src="https://i.pinimg.com/564x/c7/ab/cd/c7abcd3ce378191a3dddfa4cdb2be46f.jpg" alt="Smiley face" style="float:left; width:42px; height:42px; ">
     <a href="/Perfil"><span class="perfil">Perfil</span></a>
   </div>
@@ -54,8 +57,67 @@
         enviado de volta a 1958 para impedir o assassinato de Kennedy, mas logo 
         percebe que mudar o passado tem consequências imprevisíveis...
       </div>
+      <form action="/adicionar_livro" method="POST">
+        <input type="hidden" name="Autor" value="Suzanne Collins">
+        <input type="hidden" name="generos" value="Aventura, Ficção Científica">
+        <input type="hidden" name="titulo" value="The Hunger Games">
+        <input type="hidden" name="capa" value="https://m.media-amazon.com/images/I/61I24wOsn8L._AC_UF1000,1000_QL80_.jpg">
+        <select name="status">
 
+        <option value="Planejo Ler">
+          Planejo Ler
+        </option>
+
+        <option value="Lendo">
+          Lendo
+        </option>
+
+        <option value="Lido">
+          Lido
+        </option>
+
+        </select>
+        <button type="submit">
+          Adicionar à Estante 
+        </button>
+        <label>
+
+          Nota:
+
+        </label>
+
+        <select name="nota">
+
+          <option value="0">
+            Sem nota
+          </option>
+
+          <option value="1">
+            ⭐ 1
+          </option>
+
+          <option value="2">
+            ⭐⭐ 2
+          </option>
+
+          <option value="3">
+            ⭐⭐⭐ 3
+          </option>
+
+          <option value="4">
+            ⭐⭐⭐⭐ 4
+          </option>
+
+          <option value="5">
+            ⭐⭐⭐⭐⭐ 5
+          </option>
+
+        </select>
+
+      </div>
+    </form>
     </section>
+      
 
     <section class="criticas-area">
 
@@ -68,15 +130,12 @@
           <div class="avatar"><img src="https://i.pinimg.com/564x/c7/ab/cd/c7abcd3ce378191a3dddfa4cdb2be46f.jpg"></div>
 
           <div class="conteudo-critica">
-            <h3>Título da Crítica</h3>
+            <h3>Nome do Usuario</h3>
             <p>Resenha e Crítica</p>
           </div>
 
         </div>
 
-        <div class="avaliacao">
-          Avaliação: ☆ ☆ ☆
-        </div>
 
       </div>
 
@@ -86,5 +145,6 @@
 <footer>
   <p class="footer">Desenvolvedores: Cauê e Alexandre</p>
 </footer>
+<script src="busca.js" defer></script>
 </body>
 </html>

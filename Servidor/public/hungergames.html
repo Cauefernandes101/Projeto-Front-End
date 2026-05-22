@@ -77,32 +77,7 @@
         <button type="submit">
           Adicionar à Estante 
         </button>
-
-      </form>
-    </section>
-
-    <section class="criticas-area">
-
-      <h2>Críticas</h2>
-      
-      <div class="card-critica">
-
-        <div class="usuario">
-
-          <div class="avatar"><img src="https://i.pinimg.com/564x/c7/ab/cd/c7abcd3ce378191a3dddfa4cdb2be46f.jpg"></div>
-
-          <div class="conteudo-critica">
-            <h3>Título da Crítica</h3>
-            <p>Resenha e Crítica</p>
-          </div>
-          <h4>Escreva:</h4>
-          <form method="post" action="/Escrever_Critica">
-          <textarea name="resposta" rows="4" cols="80" placeholder="Digite sua Critica..."></textarea><br>
-          <input type="hidden" name="arquivo" value="hungergames.html">
-          <input type="submit" value="Enviar">
-          </form>
-        </div>
-
+        
         <label>
 
           Nota:
@@ -137,13 +112,43 @@
 
         </select>
 
-      </div>
+      </form>
+    </section>
 
+    <section class="criticas-area">
+
+      <h2>Críticas</h2>
+      
+      <div class="card-critica">
+
+        <div class="usuario">
+
+          <div class="avatar"><img src="https://i.pinimg.com/564x/c7/ab/cd/c7abcd3ce378191a3dddfa4cdb2be46f.jpg"></div>
+
+          <div class="conteudo-critica">
+            <h3>Nome do Usuario</h3>
+            <p>Resenha e Crítica</p>
+          </div>
+          <h4>Escreva:</h4>
+          <form method="post" action="/Escrever_Critica">
+          <textarea name="resposta" rows="4" cols="80" placeholder="Digite sua Critica..."></textarea><br>
+          <input type="hidden" name="arquivo" value="hungergames.html">
+          <input type="submit" value="Enviar">
+
+          </form>
+        </div>
+
+
+      </div>
+        
+    
+        <!-- CRITICAS-AQUI -->
     </section>
 
   </main>
 <footer>
   <p class="footer">Desenvolvedores: Cauê e Alexandre</p>
 </footer>
+<script src="busca.js" defer></script>
 </body>
 </html>

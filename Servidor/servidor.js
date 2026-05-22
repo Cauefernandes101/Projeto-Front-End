@@ -136,7 +136,7 @@ app.post("/logar_usuario", async (req, res) => {
           <div class="avatar"><img src="https://i.pinimg.com/564x/c7/ab/cd/c7abcd3ce378191a3dddfa4cdb2be46f.jpg"></div>\n
 
           <div class="conteudo-critica">\n
-            <h3>Título da Crítica</h3>\n
+            <h3>${req.session.nome}</h3>\n
             <p>${resposta}</p>\n
           </div>\n
           <h4>Escreva:</h4>\n
@@ -192,7 +192,7 @@ app.post("/logar_usuario", async (req, res) => {
           <div class="avatar"><img src="https://i.pinimg.com/564x/c7/ab/cd/c7abcd3ce378191a3dddfa4cdb2be46f.jpg"></div>\n
 
           <div class="conteudo-critica">\n
-            <h3>Título da Crítica</h3>\n
+            <h3>*Resposta ${req.session.nome}</h3>\n
             <p>${resposta}</p>\n
           </div>\n
           <h4>Escreva:</h4>\n
@@ -203,9 +203,6 @@ app.post("/logar_usuario", async (req, res) => {
           </form>\n
         </div>\n
 
-        <div class="avaliacao">\n
-          Avaliação: ☆ ☆ ☆ ☆ ☆\n
-        </div>\n
         
         `;  
  
