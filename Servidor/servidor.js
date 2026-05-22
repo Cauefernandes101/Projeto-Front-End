@@ -28,7 +28,8 @@ app.use(session({
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, "view"));
 // URL de conexão com MongoDB
-const uri = "mongodb+srv://caueaquino09:Nn5oH6tNv22Boxss@sitelivros.4lm0eg3.mongodb.net/?appName=SiteLivros"; 
+
+const uri ="mongodb+srv://caueaquino09:Nn5oH6tNv22Boxss@sitelivros.4lm0eg3.mongodb.net/?appName=SiteLivros" ; 
  
 
 // Conexão com o MongoDB
@@ -60,13 +61,29 @@ app.post("/cadastrar_usuario", async (req, res) => {
       senha
     };
     await usuarios.insertOne(novoUsuario);
-    res.redirect("/login.html");
+    res.redirect("/Login");
   } catch (erro) {
     console.log(erro);
     res.status(500).send("Erro ao cadastrar usuário");
   }
 });
+// caminhos de login e logout
+app.get("/Perfil", verificarLogin, (req, res) => {
+  res.render("Perfil", { usuario: req.session.nome });
 
+});
+app.get("/Login", (req, res) => {
+  res.render("Login");
+});
+app.get("/logout", (req, res) => {
+  req.session.destroy(err => {
+    if (err) {
+      return res.status(500).send("Erro ao sair");
+    }
+
+    res.redirect("/login");
+  });
+});
 // Login de usuário 
 app.post("/logar_usuario", async (req, res) => {
   try {
@@ -76,21 +93,26 @@ app.post("/logar_usuario", async (req, res) => {
       return res.status(400).send("Nome e senha são obrigatórios!");
     }
 
-    const user = await usuarios.findOne({
-        nome,
-        senha
-      });
+    const user = await usuarios.findOne({ nome, senha });
 
-      if (!user) {
-        return res.status(401).send("Usuário inválido");
-      }
-      req.session.nome = user.nome;
-    
-    return res.redirect('/Perfil.html');}
-    catch (erro) {
+    if (!user) {
+      return res.status(401).send("Usuário inválido");
+    }
+
+    req.session.nome = user.nome;
+
+    // pega a página salva antes do login
+    const redirectTo = req.session.redirectTo || "/Perfil.html";
+
+    // limpa depois de usar
+    delete req.session.redirectTo;
+
+    return res.redirect(redirectTo);
+
+  } catch (erro) {
     console.error(erro);
     return res.status(500).send("Erro no servidor");
-     }
+  }
 });
  app.post("/Escrever_Critica", (req, res) => {
    const { resposta, arquivo } = req.body;
@@ -229,14 +251,14 @@ app.post("/logar_usuario", async (req, res) => {
   }
 
 });
+
 function verificarLogin(req, res, next) {
-
   if (!req.session.nome) {
-    return res.status(401).send("Você precisa estar logado!");
+    // salva a URL que ele tentou acessar
+    req.session.redirectTo = req.originalUrl;
+    return res.redirect("/Login");
   }
-
   next();
-
 }
 app.post("/adicionar_livro",verificarLogin, async (req, res) => {
 
