@@ -1,6 +1,6 @@
  // Aba de search
 const livros = [
-    { nome: "Harry Potter", url: "harrypotter.html" },
+    { nome: "Harry Potter", url: "harrypotter_pedrafilosofal.html" },
     { nome: "Hunger Games", url: "hungergames.html" },
     { nome: "House of Leaves", url: "houseofleaves.html" },
     { nome: "A Metamorfose", url: "metamorfose.html" },
