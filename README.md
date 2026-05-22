@@ -1,4 +1,14 @@
 # Projeto-Front-End
+Para funcionar precisa-se instalar os modulos :
+express → servidor web
+body-parser → ler formulários e JSON
+mongodb → conectar no MongoDB
+express-session → sessões/login
+ejs
+
+Para funcionar o projeto precisa de conexão com o banco de dados caso nao esteja funcionando pode ser que o link atual seja do banco de dados do criador que é bloqueado por ip.
+usamos mongodb banco nao relacional - como opção de conexão mongo db local funciona ou atlas com versão gratuita
+
 Nesse projeto, nós fizemos um site para organizar e catalogar as leituras dos usuários. Onde
 todos podem visualizar as notas e as críticas dos outros. No começo, nós fizemos uma tela de login,
 se o usuário não tiver cadastrado, então eles podem clicar em "cadastrar-se" e serem redirecionados para a tela de cadastro, onde nós implementamos um banco de dados do mongodb para eles armazenarem os nomes dos usuários e suas senhas.
