@@ -265,35 +265,51 @@ function verificarLogin(req, res, next) {
   }
   next();
 }
-app.post("/adicionar_livro",verificarLogin, async (req, res) => {
+app.post("/adicionar_livro", verificarLogin, async (req, res) => {
 
   try {
 
     const { titulo, status, nota, capa, generos, Autor } = req.body;
+
     const listaGeneros = generos
       .split(",")
-      .map(generos => generos.trim());
-    
-    const novoLivro = {
-      usuario:req.session.nome,
+      .map(genero => genero.trim());
 
-      titulo: titulo,
-      
-      Autor: Autor,
+    await livros.updateOne(
 
-      capa: capa,
+      {
+        titulo: titulo.trim(),
 
-      nota: nota,
+        usuario: req.session.nome
+      },
 
-      status: status,
+      {
+        $set: {
 
-      generos: listaGeneros
+          usuario: req.session.nome,
 
-    };
+          titulo: titulo.trim(),
 
-    await livros.insertOne(novoLivro);
+          Autor: Autor,
 
-    res.redirect('/lista_de_livros');
+          capa: capa,
+
+          nota: nota,
+
+          status: status,
+
+          generos: listaGeneros
+
+        }
+      },
+
+      {
+        upsert: true
+      }
+
+    );
+
+    res.redirect("/lista_de_livros");
 
   } catch (erro) {
 
@@ -386,6 +402,31 @@ app.get("/dados_generos", async (req, res) => {
     console.log(erro);
 
     res.status(500).send("Erro");
+
+  }
+
+});
+app.post("/remover_livro", verificarLogin, async (req, res) => {
+
+  try {
+
+    const { titulo } = req.body;
+
+    await livros.deleteOne({
+
+      titulo: titulo,
+
+      usuario: req.session.nome
+
+    });
+
+    res.redirect("/lista_de_livros");
+
+  } catch (erro) {
+
+    console.log(erro);
+
+    res.status(500).send("Erro ao remover livro");
 
   }
 

@@ -238,12 +238,6 @@ footer {
   height: 180px;
   border-radius: 50%;
 
-  background: conic-gradient(
-    hotpink 0% 40%,
-    red 40% 60%,
-    blue 60% 80%,
-    turquoise 80% 100%
-  );
 }
 /*login cadastro*/
 .centralizer {
@@ -526,4 +520,30 @@ button [type="submit"] {
     justify-content: center;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.botao-remover {
+
+  margin-top: 10px;
+
+  padding: 8px 14px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background-color: #d62828;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+}
+
+.botao-remover:hover {
+
+  background-color: #a4161a;
+
 }

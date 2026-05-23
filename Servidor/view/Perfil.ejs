@@ -33,7 +33,7 @@
 
       <div class="usuario-img"><img src="https://i.pinimg.com/564x/c7/ab/cd/c7abcd3ce378191a3dddfa4cdb2be46f.jpg" alt="Smiley face" style="width: 150px; height: 150px;"></div>
       
-      <a href="/logout"><button style="background-color:rgb(121, 115, 115);color:rgb(223, 33, 33)"  >Sair da Sessão</button></a>
+      <a href="/logout"><button style="  background-color: #a4161a;color:white"  >Sair da Sessão</button></a>
       <button><a href="lista_de_livros" class="link-livro">Lista de Livros</a></button>
       
 
@@ -45,12 +45,6 @@
 
       </div>
 
-      <ul>
-        <li style="color:red;" >Fantasia</li>
-        <li style="color:hotpink;">Aventura</li>
-        <li style="color:blue;">Romance</li>
-        <li style="color:turquoise;">Suspense</li>
-      </ul>
 
     </aside>
       <div >
@@ -90,32 +84,95 @@
   <p class="footer">Desenvolvedores: Cauê e Alexandre</p>
 </footer>
   
-  <canvas id="graficoGeneros"></canvas>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>  
 
-const ctx = document.getElementById("graficoGeneros");
-console.log(document.getElementById("graficoGeneros"));
-new Chart(ctx, {
+let grafico;
 
-  type: "pie",
+async function carregarGrafico() {
 
-  data: {
+  try {
 
-    labels: ["Aventura", "Drama", "Ficção"],
+    const resposta = await fetch("/dados_generos");
 
-    datasets: [{
+    const dados = await resposta.json();
 
-      data: [5, 3, 7],
+    console.log(dados);
 
-      backgroundColor: ["red", "blue", "green"]
+    const labels = Object.keys(dados);
 
-    }]
+    const valores = Object.values(dados);
+
+    const ctx = document.getElementById("graficoGeneros");
+
+    if (grafico) {
+
+      grafico.destroy();
+
+    }
+
+    grafico = new Chart(ctx, {
+
+      type: "pie",
+
+      data: {
+
+        labels: labels,
+
+        datasets: [{
+
+          label: "Gêneros",
+
+          data: valores,
+
+          backgroundColor: [
+
+            "#ff6384",
+            "#36a2eb",
+            "#ffce56",
+            "#4bc0c0",
+            "#9966ff",
+            "#ff9f40",
+            "#8ac926",
+            "#c77dff"
+
+          ],
+
+          borderWidth: 1
+
+        }]
+
+      },
+
+      options: {
+
+        responsive: true,
+
+        plugins: {
+
+          legend: {
+
+            position: "bottom"
+
+          }
+
+        }
+
+      }
+
+    });
+
+  } catch (erro) {
+
+    console.log("Erro ao carregar gráfico:", erro);
 
   }
 
-});
-console.log(document.getElementById("graficoGeneros"));
+}
+
+carregarGrafico();
+
 
 </script>    
 <script src="/busca.js" defer>
