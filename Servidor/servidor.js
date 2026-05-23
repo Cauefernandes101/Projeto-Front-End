@@ -106,7 +106,7 @@ app.post("/logar_usuario", async (req, res) => {
     req.session.nome = user.nome;
 
     // pega a página salva antes do login
-    const redirectTo = req.session.redirectTo || "/Perfil.html";
+    const redirectTo = req.session.redirectTo || "/Perfil";
 
     // limpa depois de usar
     delete req.session.redirectTo;
